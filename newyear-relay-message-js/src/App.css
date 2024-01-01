@@ -1,0 +1,83 @@
+.root-container {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    gap: 12px;
+}
+
+.input-group {
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+}
+
+.main-img {
+    width: 360px;
+    height: 280px;
+    border-radius: 12px;
+}
+
+.message {
+    font-size: 28px;
+    font-style: italic;
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 16px;
+}
+
+.name-label {
+    font-size: 18px;
+}
+
+.name-input {
+    font-size: 20px;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.btn--share {
+    font-size: 24px;
+    width: 128px;
+    height: 48px;
+    border: #fff solid 1px;
+    background-color: #228be6;
+    color: #fff;
+    border-radius: 12px;
+}
+
+.btn--share:hover {
+    background-color: #fff;
+    border: #228be6 solid 1px;
+    color: #000;
+    cursor: pointer;
+}
+
+.btn--share:active {
+    background-color: #1971c2;
+    color: #fff;
+    border: #228be6 solid 1px;
+    cursor: pointer;
+}
+
+.warning-message {
+    color: red;
+}
+
+.relay-container-title {
+    font-size: 24px;
+}
+
+.relay-group {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    width: 100%;
+    height: 200px;
+}
+
+.relay-item {
+    font-size: 20px;
+}
