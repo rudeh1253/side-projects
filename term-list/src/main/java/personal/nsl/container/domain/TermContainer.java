@@ -1,13 +1,13 @@
 package personal.nsl.container.domain;
 
-public final class Container {
+public final class TermContainer {
     private long code;
     private String name;
     
-    public Container() {
+    public TermContainer() {
     }
 
-    public Container(long code, String name) {
+    public TermContainer(long code, String name) {
         this.code = code;
         this.name = name;
     }
