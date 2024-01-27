@@ -22,7 +22,7 @@ public class MemoryTermContainerRepository implements TermContainerRepository {
 
     @Override
     public Optional<TermContainer> findByName(String name) {
-        return Optional.of(repository.get(name));
+        return Optional.ofNullable(repository.get(name));
     }
 
 }
