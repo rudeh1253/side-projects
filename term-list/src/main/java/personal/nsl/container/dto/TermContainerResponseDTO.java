@@ -1,23 +1,32 @@
 package personal.nsl.container.dto;
 
+import personal.nsl.container.domain.TermContainer;
+
 public class TermContainerResponseDTO {
-    private long code;
-    private String name;
+    private final boolean present;
+    private final TermContainer termContainer;
     
-    private TermContainerResponseDTO(long code, String name) {
-        this.code = code;
-        this.name = name;
+    private TermContainerResponseDTO(boolean present, TermContainer termContainer) {
+        this.present = present;
+        this.termContainer = termContainer;
     }
     
-    public static TermContainerResponseDTO of(long code, String name) {
-        return new TermContainerResponseDTO(code, name);
+    public static TermContainerResponseDTO of(boolean present,
+                                              long code,
+                                              String name) {
+        return new TermContainerResponseDTO(present, new TermContainer(code, name));
+    }
+    
+    public static TermContainerResponseDTO of(boolean present,
+                                              TermContainer termContainer) {
+        return new TermContainerResponseDTO(present, termContainer);
+    }
+    
+    public boolean isPresent() {
+        return this.present;
     }
 
-    public long getCode() {
-        return code;
-    }
-
-    public String getName() {
-        return name;
+    public TermContainer getTermContainer() {
+        return this.termContainer;
     }
 }

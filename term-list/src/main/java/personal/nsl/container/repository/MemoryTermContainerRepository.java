@@ -7,7 +7,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import personal.nsl.container.domain.TermContainer;
 
 public class MemoryTermContainerRepository implements TermContainerRepository {
-    private static final Map<String, TermContainer> repository = new ConcurrentHashMap<>();
+    private final Map<String, TermContainer> repository = new ConcurrentHashMap<>();
 
     @Override
     public void save(TermContainer container) {
