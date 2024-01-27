@@ -5,6 +5,10 @@ import java.util.Optional;
 import personal.nsl.container.domain.TermContainer;
 
 public interface TermContainerRepository {
+    
+    public static TermContainerRepository getInstance() {
+        return new MemoryTermContainerRepository();
+    }
 
     public void save(TermContainer container);
     

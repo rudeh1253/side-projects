@@ -15,7 +15,7 @@ class MemoryTermContainerRepositoryTest {
 
     @BeforeEach
     void beforeEach() {
-        this.testRepository = new MemoryTermContainerRepository();
+        this.testRepository = TermContainerRepository.getInstance();
     }
 
     @DisplayName("JUnit is running without problems.")
