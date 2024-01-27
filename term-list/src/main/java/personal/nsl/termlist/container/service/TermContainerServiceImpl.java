@@ -1,13 +1,13 @@
-package personal.nsl.container.service;
+package personal.nsl.termlist.container.service;
 
 import java.util.Optional;
 
-import personal.nsl.container.domain.CodeGenerator;
-import personal.nsl.container.domain.ContainerConfig;
-import personal.nsl.container.domain.TermContainer;
-import personal.nsl.container.dto.TermContainerCreationResponseDTO;
-import personal.nsl.container.dto.TermContainerResponseDTO;
-import personal.nsl.container.repository.TermContainerRepository;
+import personal.nsl.termlist.container.domain.CodeGenerator;
+import personal.nsl.termlist.container.domain.ContainerConfig;
+import personal.nsl.termlist.container.domain.TermContainer;
+import personal.nsl.termlist.container.dto.TermContainerCreationResponseDTO;
+import personal.nsl.termlist.container.dto.TermContainerResponseDTO;
+import personal.nsl.termlist.container.repository.TermContainerRepository;
 
 public class TermContainerServiceImpl implements TermContainerService {
     private final TermContainerRepository termContainerRepository;

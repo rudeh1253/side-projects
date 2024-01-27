@@ -1,4 +1,4 @@
-package personal.nsl.container.dto;
+package personal.nsl.termlist.container.dto;
 
 public class TermContainerCreationResponseDTO {
     private boolean duplicateName;

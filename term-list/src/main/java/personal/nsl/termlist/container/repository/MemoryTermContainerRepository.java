@@ -1,10 +1,10 @@
-package personal.nsl.container.repository;
+package personal.nsl.termlist.container.repository;
 
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
-import personal.nsl.container.domain.TermContainer;
+import personal.nsl.termlist.container.domain.TermContainer;
 
 public class MemoryTermContainerRepository implements TermContainerRepository {
     private final Map<String, TermContainer> repository = new ConcurrentHashMap<>();

@@ -1,4 +1,4 @@
-package personal.nsl.container.domain;
+package personal.nsl.termlist.container.domain;
 
 public final class TermContainer {
     private long code;

@@ -1,6 +1,6 @@
-package personal.nsl.container.dto;
+package personal.nsl.termlist.container.dto;
 
-import personal.nsl.container.domain.TermContainer;
+import personal.nsl.termlist.container.domain.TermContainer;
 
 public class TermContainerResponseDTO {
     private final boolean present;

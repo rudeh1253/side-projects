@@ -1,4 +1,4 @@
-package personal.nsl.container.repository;
+package personal.nsl.termlist.container.repository;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -8,7 +8,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import personal.nsl.container.domain.TermContainer;
+import personal.nsl.termlist.container.domain.TermContainer;
+import personal.nsl.termlist.container.repository.TermContainerRepository;
 
 class MemoryTermContainerRepositoryTest {
     private TermContainerRepository testRepository;

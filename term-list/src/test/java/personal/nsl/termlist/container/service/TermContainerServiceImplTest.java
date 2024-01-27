@@ -1,4 +1,4 @@
-package personal.nsl.container.service;
+package personal.nsl.termlist.container.service;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -10,10 +10,12 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import personal.nsl.container.dto.TermContainerCreationResponseDTO;
-import personal.nsl.container.dto.TermContainerResponseDTO;
-import personal.nsl.container.repository.MemoryTermContainerRepository;
-import personal.nsl.container.repository.TermContainerRepository;
+import personal.nsl.termlist.container.dto.TermContainerCreationResponseDTO;
+import personal.nsl.termlist.container.dto.TermContainerResponseDTO;
+import personal.nsl.termlist.container.repository.MemoryTermContainerRepository;
+import personal.nsl.termlist.container.repository.TermContainerRepository;
+import personal.nsl.termlist.container.service.TermContainerService;
+import personal.nsl.termlist.container.service.TermContainerServiceImpl;
 
 class TermContainerServiceImplTest {
     TermContainerService testService;

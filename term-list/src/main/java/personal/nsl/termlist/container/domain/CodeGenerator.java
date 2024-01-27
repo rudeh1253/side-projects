@@ -1,4 +1,4 @@
-package personal.nsl.container.domain;
+package personal.nsl.termlist.container.domain;
 
 import java.util.Random;
 

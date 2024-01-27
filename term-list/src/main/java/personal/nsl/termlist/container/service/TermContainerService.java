@@ -1,8 +1,8 @@
-package personal.nsl.container.service;
+package personal.nsl.termlist.container.service;
 
-import personal.nsl.container.dto.TermContainerCreationResponseDTO;
-import personal.nsl.container.dto.TermContainerResponseDTO;
-import personal.nsl.container.repository.TermContainerRepository;
+import personal.nsl.termlist.container.dto.TermContainerCreationResponseDTO;
+import personal.nsl.termlist.container.dto.TermContainerResponseDTO;
+import personal.nsl.termlist.container.repository.TermContainerRepository;
 
 public interface TermContainerService {
     

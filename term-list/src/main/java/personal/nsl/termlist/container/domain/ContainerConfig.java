@@ -1,4 +1,4 @@
-package personal.nsl.container.domain;
+package personal.nsl.termlist.container.domain;
 
 public enum ContainerConfig {
     CONTAINER_CODE_LOWER_BOUND(10),

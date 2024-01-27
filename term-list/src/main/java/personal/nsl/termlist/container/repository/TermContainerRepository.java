@@ -1,8 +1,8 @@
-package personal.nsl.container.repository;
+package personal.nsl.termlist.container.repository;
 
 import java.util.Optional;
 
-import personal.nsl.container.domain.TermContainer;
+import personal.nsl.termlist.container.domain.TermContainer;
 
 public interface TermContainerRepository {
     
