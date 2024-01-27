@@ -63,6 +63,7 @@ local.properties
 .loadpath
 .factorypath
 Servers
+test-classes
 
 ##############################
 ## NetBeans
