@@ -19,7 +19,7 @@ public class SysoLogger implements NLogger {
     public void log(String msg) {
         LocalDateTime currentTime = LocalDateTime.now();
         String currentThreadName = Thread.currentThread().getName();
-        String completeMessage = String.format("%s - %s - %s",
+        String completeMessage = String.format("[%s - %s]\n\t%s",
                                        currentTime,
                                        currentThreadName,
                                        msg);
@@ -48,5 +48,47 @@ public class SysoLogger implements NLogger {
     
     public void log(double msg) {
         this.log(String.valueOf(msg));
+    }
+
+    @Override
+    public void log(String msg, Class<?> classInfo) {
+        LocalDateTime currentTime = LocalDateTime.now();
+        String currentThreadName = Thread.currentThread().getName();
+        String completeMessage = String.format("[%s - %s - %s]\n\t%s",
+                                       currentTime,
+                                       currentThreadName,
+                                       classInfo.getName(),
+                                       msg);
+        print(completeMessage);
+    }
+
+    @Override
+    public void log(Class<?> classInfo) {
+        this.log("", classInfo);
+    }
+
+    @Override
+    public void log(Object msg, Class<?> classInfo) {
+        this.log(msg.toString(), classInfo);
+    }
+
+    @Override
+    public void log(boolean msg, Class<?> classInfo) {
+        this.log(String.valueOf(msg), classInfo);
+    }
+
+    @Override
+    public void log(int msg, Class<?> classInfo) {
+        this.log(String.valueOf(msg), classInfo);
+    }
+
+    @Override
+    public void log(char msg, Class<?> classInfo) {
+        this.log(String.valueOf(msg), classInfo);
+    }
+
+    @Override
+    public void log(double msg, Class<?> classInfo) {
+        this.log(String.valueOf(msg), classInfo);
     }
 }
