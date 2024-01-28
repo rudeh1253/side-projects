@@ -29,4 +29,9 @@ public class TermContainerResponseDTO {
     public TermContainer getTermContainer() {
         return this.termContainer;
     }
+
+    @Override
+    public String toString() {
+        return "TermContainerResponseDTO [present=" + present + ", termContainer=" + termContainer + "]";
+    }
 }

@@ -1,12 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
-  <display-name>term-list</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-  </welcome-file-list>
+	<display-name>term-list</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>termContainerServlet</servlet-name>
+		<servlet-class>personal.nsl.termlist.container.servlet.TermContainerServlet</servlet-class>
+		
+		<init-param>
+			<param-name>request-param-key</param-name>
+			<param-value>name</param-value>
+		</init-param>
+		<init-param>
+			<param-name>wrong-param-key</param-name>
+			<param-value>Cannot find request parameter</param-value>
+		</init-param>
+		<init-param>
+			<param-name>container-view</param-name>
+			<param-value>container.jsp</param-value>
+		</init-param>
+		<init-param>
+			<param-name>container-creation-success-view</param-name>
+			<param-value>container-creation-success.jsp</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>termContainerServlet</servlet-name>
+		<url-pattern>/term-containers</url-pattern>
+	</servlet-mapping>
+	
+	<context-param>
+		<param-name>view-location</param-name>
+		<param-value>WEB-INF/view/</param-value>
+	</context-param>
+	<context-param>
+		<param-name>init-param-key</param-name>
+		<param-value>init-param-key</param-value>
+	</context-param>
+	<context-param>
+		<param-name>dto-key</param-name>
+		<param-value>dto</param-value>
+	</context-param>
+	<context-param>
+		<param-name>container-creation-response-key</param-name>
+		<param-value>attribute-container-creation-response-dto</param-value>
+	</context-param>
 </web-app>

@@ -30,4 +30,10 @@ public class TermContainerCreationResponseDTO {
     public long getCode() {
         return code;
     }
+
+    @Override
+    public String toString() {
+        return "TermContainerCreationResponseDTO [duplicateName=" + duplicateName + ", name=" + name + ", code=" + code
+                + "]";
+    }
 }
