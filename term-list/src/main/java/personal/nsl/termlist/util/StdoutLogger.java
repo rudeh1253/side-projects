@@ -2,14 +2,14 @@ package personal.nsl.termlist.util;
 
 import java.time.LocalDateTime;
 
-public class SysoLogger implements NLogger {
-    private static final SysoLogger log = new SysoLogger();
+public class StdoutLogger implements NLogger {
+    private static final StdoutLogger log = new StdoutLogger();
     
-    private SysoLogger() {
+    private StdoutLogger() {
     }
     
-    public static SysoLogger getInstance() {
-        return SysoLogger.log;
+    public static StdoutLogger getInstance() {
+        return StdoutLogger.log;
     }
     
     private void print(String msg) {
