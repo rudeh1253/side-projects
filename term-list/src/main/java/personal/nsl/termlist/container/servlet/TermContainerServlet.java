@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import personal.nsl.termlist.config.ContainerServletStringConstants;
+import personal.nsl.termlist.config.ContextConstants;
+import personal.nsl.termlist.config.ViewNames;
 import personal.nsl.termlist.container.dto.TermContainerCreationResponseDTO;
 import personal.nsl.termlist.container.dto.TermContainerResponseDTO;
 import personal.nsl.termlist.container.service.TermContainerService;
@@ -27,9 +30,9 @@ public class TermContainerServlet extends HttpServlet {
 
     private String getContainerName(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String paramKey = super.getInitParameter("request-param-key");
-        String errorMessage = super.getInitParameter("wrong-param-key");
-        String param = request.getParameter(paramKey);
+        String errorMessage = ContainerServletStringConstants.WRONG_PARAM_KEY.get();
+        String param = request
+                .getParameter(ContainerServletStringConstants.REQUEST_PARAM_KEY.get());
 
         log.log(param, getClass());
 
@@ -60,25 +63,20 @@ public class TermContainerServlet extends HttpServlet {
         TermContainerResponseDTO dto = this.termContainerService.getContainer(reqContainerName);
         log.log(dto);
 
-        setDtoAttribute(request, super.getServletContext(), dto);
+        request.setAttribute(ContextConstants.DTO_KEY.get(), dto);
         response.setContentType("text/html");
 
-        String viewUri = resolveViewUri("container-view");
+        String viewUri = resolveViewUri(ViewNames.CONTAINER.get());
 
         RequestDispatcher dispatcher = request.getRequestDispatcher(viewUri);
         dispatcher.forward(request, response);
     }
 
     private String resolveViewUri(String containerNameKey) {
-        ViewUriResolver viewUriResolver = new ViewUriResolver(this);
-        String viewUri = viewUriResolver.getUri(containerNameKey);
+        String viewLocation = ContextConstants.VIEW_LOCATION.get();
+        String viewUri = viewLocation + containerNameKey;
         log.log(viewUri, super.getClass());
         return viewUri;
-    }
-    
-    private void setDtoAttribute(HttpServletRequest request, ServletContext context, Object dto) {
-        String dtoAttributeKey = context.getInitParameter("dto-key");
-        request.setAttribute(dtoAttributeKey, dto);
     }
 
     @Override
@@ -101,9 +99,9 @@ public class TermContainerServlet extends HttpServlet {
             throws ServletException, IOException {
         TermContainerCreationResponseDTO dto = this.termContainerService.addContainer(reqContainerName);
         
-        setDtoAttribute(request, super.getServletContext(), dto);
+        request.setAttribute(ContextConstants.DTO_KEY.get(), dto);
 
-        String viewUri = resolveViewUri("container-creation-success-view");
+        String viewUri = resolveViewUri(ViewNames.CONTAINER_CREATION_SUCCESS.get());
 
         RequestDispatcher dispatcher = request.getRequestDispatcher(viewUri);
         dispatcher.forward(request, response);
@@ -132,6 +130,8 @@ public class TermContainerServlet extends HttpServlet {
                                          throws ServletException, IOException {
         boolean removed = this.termContainerService.removeContainer(reqContainerName);
         
-        setDtoAttribute(request, super.getServletContext(), removed);
+        request.setAttribute(ContextConstants.DTO_KEY.get(), removed);
+        
+        response.sendRedirect("/");
     }
 }

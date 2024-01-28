@@ -1,5 +1,6 @@
+<%@page import="personal.nsl.termlist.config.ContextConstants"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,9 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-String dtoAttributeKey = super.getServletContext().getInitParameter("dto-key");
-%>>
-	<%= request.getAttribute(dtoAttributeKey) %>>
+	<%!String dtoAttributeKey = ContextConstants.DTO_KEY.get();%>>
+	<%=request.getAttribute(dtoAttributeKey)%>>
 </body>
 </html>
