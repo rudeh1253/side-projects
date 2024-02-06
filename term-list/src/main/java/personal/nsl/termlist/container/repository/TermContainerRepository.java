@@ -10,7 +10,7 @@ public interface TermContainerRepository {
         return new MemoryTermContainerRepository();
     }
 
-    public void save(TermContainer container);
+    public boolean save(TermContainer container);
     
     public boolean deleteByName(String name);
     

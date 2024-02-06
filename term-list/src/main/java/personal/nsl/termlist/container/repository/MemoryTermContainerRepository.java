@@ -8,12 +8,20 @@ import personal.nsl.termlist.container.domain.TermContainer;
 import personal.nsl.termlist.util.NLogger;
 
 public class MemoryTermContainerRepository implements TermContainerRepository {
+    private static final NLogger log = NLogger.getLogger();
+    
     private final Map<String, TermContainer> repository = new ConcurrentHashMap<>();
-    private final NLogger log = NLogger.getLogger();
 
     @Override
-    public void save(TermContainer container) {
-        repository.put(container.getName(), container);
+    public boolean save(TermContainer container) {
+        log.log(container);
+        
+        if (!this.repository.containsKey(container.getName())) {
+            repository.put(container.getName(), container);
+            log.log("Succeeded to save", getClass());
+            return true;
+        }
+        return false;
     }
 
     @Override
