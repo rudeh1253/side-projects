@@ -1,6 +1,5 @@
 package personal.nsl.termlist.signup.repository;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -10,9 +9,17 @@ import personal.nsl.termlist.signup.domain.User;
 import personal.nsl.termlist.util.NLogger;
 
 public class MemoryUserRepository implements UserRepository {
+    private static final MemoryUserRepository instance = new MemoryUserRepository();
     private static final NLogger log = NLogger.getLogger();
 
     private final Map<String, User> repository = new ConcurrentHashMap<>();
+    
+    private MemoryUserRepository() {
+    }
+    
+    public static UserRepository getInstance() {
+        return instance;
+    }
 
     @Override
     public boolean save(User user) {

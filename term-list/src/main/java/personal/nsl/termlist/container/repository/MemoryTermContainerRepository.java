@@ -8,9 +8,17 @@ import personal.nsl.termlist.container.domain.TermContainer;
 import personal.nsl.termlist.util.NLogger;
 
 public class MemoryTermContainerRepository implements TermContainerRepository {
+    private static final MemoryTermContainerRepository instance = new MemoryTermContainerRepository();
     private static final NLogger log = NLogger.getLogger();
     
     private final Map<String, TermContainer> repository = new ConcurrentHashMap<>();
+    
+    private MemoryTermContainerRepository() {
+    }
+    
+    public static TermContainerRepository getInstance() {
+        return instance;
+    }
 
     @Override
     public boolean save(TermContainer container) {

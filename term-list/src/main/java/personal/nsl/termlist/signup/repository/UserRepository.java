@@ -6,6 +6,10 @@ import java.util.Optional;
 import personal.nsl.termlist.signup.domain.User;
 
 public interface UserRepository {
+    
+    public static UserRepository getInstance() {
+        return MemoryUserRepository.getInstance();
+    }
 
     public boolean save(User user);
     

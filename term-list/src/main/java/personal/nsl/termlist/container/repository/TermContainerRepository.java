@@ -7,7 +7,7 @@ import personal.nsl.termlist.container.domain.TermContainer;
 public interface TermContainerRepository {
     
     public static TermContainerRepository getInstance() {
-        return new MemoryTermContainerRepository();
+        return MemoryTermContainerRepository.getInstance();
     }
 
     public boolean save(TermContainer container);
